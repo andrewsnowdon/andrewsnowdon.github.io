@@ -60,69 +60,64 @@
   </script>
 </div>
     
-    <h3> Chart on Football <h3>
+   <Vega embed the next chart>
+       {
+       
+       </div>
+    <div class="chart" id="Chart3">
+        <script>
         
-        </script>
-        {
+   <h3> Chart Showing the varying distance between Bitcoin trading prices" <h3>
+            
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
-  "data": {"url": "https://app.sportdataapi.com/api/v1/soccer/matches?apikey=b8bb8050-f3d3-11eb-808b-334144de1112&season_id=1980",
-  "format":{
-    "type": "json",
-    "property": "data"}},
+  "description": "BitCoin Price",
 
-    "title": {
-    "text": "Premiership - home advantage?",
-    "subtitle":["Cumulative goals scored by home and away teams",""],
+   "title": {
+    "text": "Bitcoin: trading range",
+    "subtitle":"High-low range, 8h time periods. Source: coinapi.io",
     "subtitleFontStyle":"italic",
     "subtitleFontSize":10,
-    "anchor": "start",
-    "color": "black"
+    "anchor": "start"},
+  
+   
+  "data": {
+      "url": "https://raw.githubusercontent.com/RDeconomist/RDeconomist.github.io/main/charts/crypto/data_ohlcv_BTC.json",
+      "format": {"type": "json"}},
+  
 
+  "height": 300,
+  "width": 300,
+  
+
+  "mark": {
+    "type": "area",
+    "point": false,
+    "color":"#f4c245"
   },
 
-  "transform": [
-
-    {"calculate": "now()", "as": "today"},
-    {"calculate": "datum.match_start - datum.today", "as":"futureTest"},
-    {"filter":"datum.futureTest<0"},
-
-    {"window": [
-      {"op": "sum","field": "stats.home_score", "as": "Home"},
-      {"op": "sum","field": "stats.away_score", "as": "Away"}],
-      "sort": [{"field":"match_start", "order":"ascending"}]}],
-
-  "height":300,
-  "width":300,         
-
-  "encoding": {"x": {"field": "match_start", "type": "temporal","title":null}},
-
-  "layer":[
-
-    {"mark": {"type":"circle", "size":100},
-     
-     "encoding": {
-       "y": {"field": "Home", "type": "quantitative","title":null},
-        "color": {
-        "datum": "Home",
-            "scale": {"range": ["green", "blue"]},
-            "legend":{
-              "orient": "top-left",
-              "fillColor":"white"}}}},
-
-
-    {"mark": {"type":"circle", "size":100},
-     
-     "encoding": {
-       "y": {"field": "Away", "type": "quantitative","title":null},
-      "color": {"datum": "Away"}}}
-     ]
-}
-        </script>
+  
+  "encoding": {
     
-</body>
+    "x": {
+      "field": "time_period_start",
+      "type": "temporal",
+      "axis": {
+        "title": null,
+        "grid": false,
+        "labelSeparation": 10}},
 
+    "y": {
+      "field": "price_low",
+      "type": "quantitative",
+      "title": "",
+      "scale":{"domain":[30000, 60000]},
+      "axis": {
+        "grid": false,
+        "format":"$.2s"}},
 
-</html>
+    "y2": {"field": "price_high"}       
+  }
+}
 
 
