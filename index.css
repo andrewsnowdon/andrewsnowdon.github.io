@@ -5,11 +5,17 @@
 /* This is my first proper css file */
 
 body{
-    background-color: rgb(233, 233, 233);
+    background-color: #123524
+    margin: auto;
+    
+    
 }
+h1{
+color: white
+    
 
-h1, h3, p{
-    color:rgb(17, 17, 17);
+h3, p{
+    color: white;
     font-family: 'Roboto', sans-serif;
 }
 
