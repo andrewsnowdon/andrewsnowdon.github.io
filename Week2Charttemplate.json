@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     
-    "title": {
-      "text": "TITLE HERE",
+    "title": { 
+      "text": "Graph of Covid by Region",
       "subtitle":"Sub-title here",
       "subtitleFontStyle":"italic",
       "subtitleFontSize":10,
@@ -11,15 +11,15 @@
     },
     
      "data": {
-      "url": "PASTE YOUR API HERE",
+      "url": "https://api.coronavirus.data.gov.uk/v2/data?areaType=overview&metric=newCasesBySpecimenDate&format=csv",
       "format": {"type": "csv"}
     },
   
      "transform":[
         
         {"filter": {
-          "field": "VARIABLE TO FILTER HERE", 
-          "oneOf": ["X", "Y", "Z"]}
+          "field": "areaName", 
+          "oneOf": [ "Swansea", "Leeds", "Aberdeen"]}
           }
   
   
@@ -41,7 +41,7 @@
       },
   
       "y": {
-        "field": "VARIABLE YOU ARE MEASURING HERE",
+        "field": "newCasesByPublishDateRollingRate",
         "type": "quantitative",
         "title": null,
         "axis": {"grid": false}
