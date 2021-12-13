@@ -1,0 +1,40 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/andrewsnowdon/andrewsnowdon.github.io/main/Chart6_Denmarkpopulation.csv",
+    "format": {"type": "csv", "property": "years"}
+  },
+  "title": {
+    "text": "Total Population of Denmark",
+    "subtitle": "Source: EUROSTAT (2011-2021)",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 8,
+    "anchor": "start",
+    "color": "black"
+  },
+  "width": 300,
+  "height": 300,
+  "mark": {
+    "type": "line",
+    "color": "#286fccde",
+    "strokeWidth": 2,
+    "opacity": 1
+  },
+  "encoding": {
+    "x": {
+      "field": "TIME_PERIOD",
+      "type": "ordinal",
+      "grid": false,
+      "ticks": false,
+      "labelAngle": 0,
+      "title": null
+    },
+    "y": {
+      "field": "OBS_VALUE",
+      "type": "quantitative",
+      "scale": {"domain": [5500000,6000000]},
+      "title": null
+    }
+  },
+  "config": {}
+}
