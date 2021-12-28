@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
-        "text": "DOGE Price",
+        "text": "ETH Price",
         "subtitle": "Price at close (GBP), Source: CoinAPI.io",
         "subtitleFontStyle": "italic",
         "subtitleFontSize": 10,
