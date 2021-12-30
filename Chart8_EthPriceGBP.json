@@ -24,7 +24,7 @@
         "field": "price_close",
         "title": "Price ($)",
         "type": "quantitative",
-        "format": "£"
+        "format": "$.5"
       }
     }
   }
