@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head> : 
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>Data Science | Bristol University | Andrew Snowdon</title>
+    <link rel = "stylesheet" href="style2.css" >  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootsrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<body>
+    
+</head>
+<body>
+    <section class="header">
+        <nav>
+            
+            <div class="nav-links">
+                <i class="fa fa-times"></i>
+                <ul>
+                    <li><a href="1index.html">HOME</a></li>
+                    <li><a href="portfolio.html">PORTFOLIO</a></li>
+                    <li><a href="project.html">PROJECT</a></li>
+                    <li><a href="https://github.com/andrewsnowdon/andrewsnowdon.github.io">MY GITHUB</a></li>
+                    
+                </ul>
+            </div>
+        </nav>
+
+    <h1>Data Science 2021</h1>
+    <div class="wrap">
+
+    <h3>Covid-19</h3>
+
+    <p>The first chart tracks Covid-19 cases by UK region.</p>
+
+<!--Vaga embed, with notes for what is going on-->
+<div class="chart" id="Chart1">
+
+  <script>
+    // Following the script tag we are using Javascript.
+    // One way to tell is to see how comments work...
+    // First job is to set the chart as a JS variable:
+    var myChart1 = "chart1_covidUKRegions.json";
+      // updated file changes `
+    // Now we simply insert it, using Vega's embed code:
+    // The embed function needs to be told the location, and what to put there. 
+    vegaEmbed('#Chart1', myChart1);
+  </script>
+
+</div>
+
+  <h3>Productivity puzzle</h3>
+
+  <p>My second chart looks at productivity in the UK</p>
+
+<div class="chart" id="Chart2">
+  <script>
+    var myChart2 = "chart2_ukProductivity.json";
+    vegaEmbed('#Chart2', myChart2);
+  </script>
+</div>
+    
+ <h3>Football chart<h3>
+ <div class="chart" id="Chart3"> 
+     <script>
+      
+    
+ var myChart3 = "Chart3_Footballchart.json";
+   
+ vegaEmbed('#Chart3', myChart3);
+     </script>
+     </div> 
+         
+         <h3> Week 2 Homework </h3>
+             <p>Chart number 1 compares new Covid Cases by region<p>
+     <div class="chart" id="Chart4">
+         <script>
+             
+             var myChart4 = "Chart4_MyWeek2chart";
+             vegaEmbed ('#Chart4', myChart4);
+         </script>
+     </div>
+     
+     <h3> Week 2 Homework </h3>
+     <p> Chart number 2 does the same thing but uses the raw data saved locally on my github repositry <p>
+     <div class = "chart" id="Chart5">
+         <script> 
+             
+             var myChart5 = "Chart5_CovidDataRaw";
+             vegaEmbed ('#Chart5', myChart5);
+         </script>
+     </div>
+     <h3> Week 3 Homework 3 </h3>
+     <p> This Chart Contains Data on the Danish Population from 2011 up until 2020. The data I downloaded only included information from 2012 up until 2020, so I edited the csv file and added an observation for 2011 from elsewhere on the Eurostat website<p>
+     <div class = "chart" id="Chart6">
+     <script>
+         
+         var myChart6 = "Chart6_DanishPopulation.json";
+         vegaEmbed ('#Chart6', myChart6);
+     
+     </script>
+     </div>
+     <h3> Week 3 Homework 3 </h3>
+     <p> Manually written in line JSON <p>
+     <div class = "chart" id= "Chart7">
+         <script> 
+             var myChart7 = "Chart7_PointsScoredBySwansInPrem.json";
+             vegaEmbed ('#Chart7', myChart7);
+         </script>
+     </div> 
+     <h3> Week 4 Homework 4 <h3> 
+         <p> Using API's to gather Info <p> 
+         <div class = "chart" id= "Chart8">
+             <script>
+                 var myChart8 = "Chart8_EthPriceGBP.json"
+                 vegaEmbed ('#Chart8', myChart8);
+             </script>
+         </div>
+         
+         <div class = "chart" id= "Chart9">
+             <script>
+         var myChart9 = "Chart9_Stop&SearchHackney"
+                 vegaEmbed ('#Chart9', myChart9);
+             </script>
+         </div> 
+         <h3> Fetch API Using Loop function <h3> 
+         <div class = "chart" id= "Chart10">
+             <script> 
+                 var myChart10 = "Chart10_BTCprice.json"
+                 vegaEmbed ('#Chart10', myChart10);
+             </script>
+         </div>
+         <div class = "chart" id= "Chart11" >
+             <script>
+                 var myChart11 = "Chart11_ETH.json"
+                 vegaEmbed ('#Chart11', myChart11);
+             </script>
+         </div> 
+         <div class = "chart" id= "Chart12" > 
+             <script> 
+                 var myChart12 = "Chart12_SHIB.json"
+                 vegaEmbed ('#Chart12', myChart12);
+             </script> 
+         </div> 
+         <div class = "chart" id="Chart13" >
+             <script>
+                 var myChart13 = "Chart13_DOGE.json"
+                 vegaEmbed ('#Chart13', myChart13);
+             </script>
+         </div>
+              
+     </body>
+     </html>
