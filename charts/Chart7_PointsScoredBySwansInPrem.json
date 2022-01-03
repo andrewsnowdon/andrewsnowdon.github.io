@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Manchester United Premier League Points by Season",
+    "data": {
+     "values": [ 
+       {"seasons": "11/12", "Points": 47},
+       {"seasons": "12/13", "Points": 46},
+       {"seasons": "13/14", "Points": 42},
+       {"seasons": "14/15", "Points": 54},
+       {"seasons": "15/16", "Points": 47},
+       {"seasons": "16/17", "Points": 41},
+       {"seasons": "17/18", "Points": 33}
+  ]
+    },
+  "title": {
+  "text": "Points Scored By Swansea AFC when they were in the Premier League",
+  "subtitle": "Data Manually Inputted via Transfermrkt.com",
+  "subtitleFontStyle": "italic",
+  "anchor": "start",
+  "color": "black"
+  },
+  "height": 300,
+  "width": 300,
+  "mark": {"type": "bar", "width": 30},
+  "encoding": {
+    "x": {"field": "seasons", "type": "nominal", "axis": {"labelAngle": 0}},
+    "y": {"field": "Points", "type": "quantitative"}
+    }
+  }
