@@ -1,30 +1,30 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {
-      "text": "Ethereum price this year",
-      "subtitle": "Weekly close price. Source: coinapi.io",
-      "subtitleFontStyle": "italic",
-      "subtitleFontSize": 10,
-      "anchor": "start",
-      "color": "#000000",
-      "subtitleColor": "#000000"
-    },
-    "description": "null",
-    "data": {
-  
-  
-      "url": "https://rest.coinapi.io/v1/ohlcv/ETH/GBP/history?period_id=7day&time_start=2021-01-01T00:00:00&limit=100&include_empty_items=false&apikey=1EFD28EC-00B4-4207-B762-78F49DFF6338"
-    },
-    "height": 300,
-    "width": 300,
-    "mark": "line",
-    "encoding": {
-      "x": {"field": "time_period_start", "title": "Date", "type": "temporal"},
-      "y": {
-        "field": "price_close",
-        "title": "Price (£)",
-        "type": "quantitative",
-        "format": "$.5"
-      }
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Ethereum price this year",
+    "subtitle": "Weekly close price. Source: coinapi.io",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "#000000",
+    "subtitleColor": "#000000"
+  },
+  "description": "null",
+  "data": {
+    "url": "https://rest.coinapi.io/v1/ohlcv/ETH/GBP/history?period_id=7day&time_start=2021-06-01T00:00:00&limit=100&include_empty_items=false&apikey=1EFD28EC-00B4-4207-B762-78F49DFF6338"
+  },
+  "height": 300,
+  "width": 300,
+  "mark": "line",
+  "encoding": {
+    "x": {"field": "time_period_start", "title": "Date", "type":  "temporal", "axis": {"grid": false}},
+    
+    "y": {
+      "field": "price_close",
+      "title": "Price (£)",
+      "type": "quantitative",
+      "format": "$.5",
+      "axis": {"grid": false}
     }
   }
+}
