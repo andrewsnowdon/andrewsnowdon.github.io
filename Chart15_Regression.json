@@ -1,0 +1,56 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/andrewsnowdon/andrewsnowdon.github.io/main/Cryptoprices%20-%20in.csv"
+  },
+  "height": 300,
+  "width": 390,
+  "title": {
+    "text": "Regressing BTC-GBP against XRP-GBP",
+    "subtitle": "Source: Yahoo Finance",
+    "subtitleFontStyle": "italic"
+  },
+  "layer": [
+    {
+      "mark": {"type": "point", "color": "green"},
+      "encoding": {
+        "x": {
+          "field": "XRP-GBP",
+          "title": "XRP-GBP",
+          "type": "quantitative",
+          "scale": {"domain": [0.1, 1.6]},
+          "axis": {"domain": true}
+        },
+        "y": {
+          "field": "BTC-GBP",
+          "title": "BTC-GBP",
+          "type": "quantitative",
+          "scale": {"domain": [2500, 60000]}
+        }
+      }
+    },
+    {
+      "mark": {"type": "line", "color": "black"},
+      "transform": [{"regression": "XRP-GBP", "on": "BTC-GBP"}],
+      "encoding": {
+        "x": {"field": "XRP-GBP", "type": "quantitative"},
+        "y": {"field": "BTC-GBP", "type": "quantitative"}
+      }
+    },
+    {
+      "transform": [
+        {"regression": "XRP-GBP", "on": "BTC-GBP", "params": true},
+        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+      ],
+      "mark": {
+        "type": "text",
+        "color": "green",
+        "x": "width",
+        "align": "right",
+        "y": -10
+      },
+      "encoding": {"text": {"type": "nominal", "field": "R2"}}
+    }
+  ],
+  "config": {}
+}
