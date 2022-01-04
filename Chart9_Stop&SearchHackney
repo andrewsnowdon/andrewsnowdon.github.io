@@ -1,45 +1,29 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  
-      "description": "Police Crime chart",
-  
-      "title": {
-       "text": "Stop and Search in Hackney",
-       "anchor": "start",
-       "color": "black",
-       "subtitle":"Stop and Search in Victor House, Hackney. Source: Police API.",
-       "subtitleFontStyle":"italic",
-       "subtitleFontSize":10,
-       "subtitleColor":"black"
-    },
-   
-    "data": {"url": "https://data.police.uk/api/stops-street?lat=51.544219&lng=-0.060840&date=2020-06"},
-  
-    "transform": [
-      {"calculate":"1", "as":"stops"}
-    ],
-  
-    "width":300,
-    "height":300,
-      
-    "mark": {
-      "type": "arc", 
-      "innerRadius": 80},
-         
-    "encoding": {
-      
-      "theta": {
-        "aggregate": "sum",
-        "field": "stops", 
-        "type": "ordinal"},
-      
-      "color": {
-        "field": "age_range", 
-        "type": "nominal",
-        "scale":{"scheme":"viridis"},
-        "legend":{
-          "title":null
-        }
-      }
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Police Crime chart",
+  "title": {
+    "text": "Stop and Search by age range in Hackney in June 2020",
+    "anchor": "start",
+    "color": "black",
+    "subtitle": "Stop and Search in Victor House, Hackney. Source: Police API.",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "subtitleColor": "black"
+  },
+  "data": {
+    "url": "https://data.police.uk/api/stops-street?lat=51.544219&lng=-0.060840&date=2020-06"
+  },
+  "transform": [{"calculate": "1", "as": "stops"}],
+  "width": 300,
+  "height": 300,
+  "mark": {"type": "arc", "innerRadius": 80},
+  "encoding": {
+    "theta": {"aggregate": "count", "field": "age_range", "type": "nominal"},
+    "color": {
+      "field": "age_range",
+      "type": "ordinal",
+      "scale": {"scheme": "viridis"},
+      "legend": {"title": null}
     }
   }
+}
