@@ -1,93 +1,67 @@
-{
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "Coronavirus cases",
+  "data": {
+    "url": "https://api.coronavirus.data.gov.uk/v2/data?areaType=region&metric=newCasesByPublishDate&format=csv",
+    "format": {"type": "csv"}
+  },
   "title": {
-    "text": "Cases: UK nations",
-    "subtitle": [
-      "New cases by publish date, rolling rate"
-      
-    ],
+    "text": "Covid cases: UK regions",
+    "subtitle": "NewCases By Publish Date",
     "subtitleFontStyle": "italic",
     "subtitleFontSize": 10,
     "anchor": "start",
     "color": "black"
   },
-  "background": "whitesmoke",
-  "width": 800,
-  "height": 600,
-  "data": {
-    "url": "https://api.coronavirus.data.gov.uk/v2/data?areaType=nation&metric=newCasesBySpecimenDateRollingRate&format=csv",
-  "format": {"type": "csv"}},
-  "layer": [
+  "height": 300,
+  "width": 280,
+  "mark": {"type": "bar", "width": 10},
+  "selection": {
+    "Region": {
+      "type": "single",
+      "fields": ["areaName"],
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "East Midlands",
+          "East of England",
+          "London",
+          "North East",
+          "North West",
+          "South East",
+          "South West",
+          "West Midlands",
+          "Yorkshire and The Humber"
+        ],
+        "name": "Region"
+      }
+    }
+  },
+  "transform": [
+    {"filter": {"selection": "Region"}},
     {
-      "encoding": {
-        "x": {"field": "date", "type": "temporal"},
-        "y": {"field": "newCasesBySpecimenDateRollingRate", "type": "quantitative"},
-        "color": {"field": "areaName", "type": "nominal"}
-      },
-      "layer": [
-        {"mark": "line"},
-        {
-          "params": [
-            {
-              "name": "label",
-              "select": {
-                "type": "point",
-                "encodings": ["x"],
-                "nearest": true,
-                "on": "mouseover"
-
-              }
-            }
-          ],
-          "mark": "point",
-          "encoding": {
-            "opacity": {
-              "condition": {"param": "label", "empty": false, "value": 1},
-              "value": 0
-            }
-          }
-        }
-      ]
-    },
-    {
-      "transform": [{"filter": {"param": "label", "empty": true}}],
-      "layer": [
-        {
-          "mark": {"type": "rule", "color": "grey"},
-          "encoding": {
-            "x": {"type": "temporal", "field": "date", "aggregate": "min"}
-          }
-        },
-        {
-          "encoding": {
-            "text": {"type": "quantitative", "field": "newCasesBySpecimenDateRollingRate"},
-            "x": {"type": "temporal", "field": "date", "title": "Month"},
-            "y": {
-              "type": "quantitative",
-              "field": "newCasesBySpecimenDateRollingRate",
-              "title": "Count"
-            }
-          },
-          "layer": [
-            {
-              "mark": {
-                "type": "text",
-                "stroke": "white",
-                "strokeWidth": 0.5,
-                "align": "left",
-                "dx": 5,
-                "dy": -5
-                
-              }
-            },
-            {
-              "mark": {"type": "text", "align": "left", "dx": 5, "dy": -5},
-              "encoding": {"color": {"type": "quantitative"}}
-            }
-          ]
-        }
-      ]
+      "filter": {
+        "field": "date",
+        "range": [
+          {"year": 2020, "month": "dec", "date": 1},
+          {"year": 2050, "month": "dec", "date": 30}
+        ]
+      }
     }
   ],
-  "config": {}
+  "encoding": {
+    "x": {"field": "date", "type": "temporal", "title": null},
+    "y": {
+      "field": "newCasesByPublishDate",
+      "type": "quantitative",
+      "title": null
+    },
+    "color": {
+      "field": "areaName",
+      "type": "nominal",
+      "legend": null,
+      "scale": {"scheme": "spectral"}
+    }
+  }
 }
