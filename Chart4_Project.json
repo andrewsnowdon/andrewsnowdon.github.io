@@ -1,0 +1,81 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "config": {"background": "whitesmoke"},
+    "title": {
+      "text": "Chart 1: Daily Cryptocurrency Returns",
+      "subtitle": "Daily returns for 5 major stock indexes ",
+      "subtitleFontStyle": "italic",
+      "subtitleFontSize": 10,
+      "anchor": "start",
+      "color": "whitesmoke"
+    },
+    "data": {
+      "url": "https://raw.githubusercontent.com/andrewsnowdon/andrewsnowdon.github.io/main/Data_mega_final(ammended).csv",
+      "format": {"type": "csv", "parse": {"Date": "date:'%d/%m/%Y'"}}
+    },
+    
+    "selection": {
+      "Stockname": {
+        "type": "single",
+        "fields": ["Stockname"],
+        "bind": {
+          "input": "select",
+          "options": [
+            null,
+            "DAX",
+            "DOWJONES",
+            "FTSE100",
+            "NASDAQ",
+            "S&P500"
+            
+          ],
+          "name": "Pick an index: "
+        }
+      }
+    },
+    "transform": [
+      {"filter": {"selection": "Stockname"}},
+      {
+        "filter": {
+          "field": "Stockname",
+          "oneOf": [
+            "DAX",
+            "DOWJONES",
+            "FTSE100",
+            "NASDAQ",
+            "S&P500"
+          ]
+        }
+      }
+    ],
+    "height": 300,
+    "width": 600,
+    "mark": {"type": "circle"},
+    "encoding": {
+      "x": {
+        "field": "Date",
+        "type": "temporal",
+        "title": "Date",
+        "axis": {"grid": false}
+      },
+      "y": {
+        "field": "Returns",
+        "type": "quantitative",
+        "title": "Daily Return (%)",
+        "scale": {"domain": [-20, 20]},
+        "axis": {"grid": false}
+      },
+      "color": {
+        "field": "Stockname",
+        "type": "nominal",
+        "scale": {"scheme": "inferno"},
+        "title": "Stockname",
+        "legend": {"orient": "top-left", "fillColor": "whitesmoke"}
+      },
+      "tooltip": [
+        {"field": "Stockname", "title": "Stockname", "type": "ordinal"},
+        {"field": "Date", "title": "Date", "type": "temporal"},
+        {"field": "Returns", "title": "Return (%)", "type": "quantitative"}
+      ]
+    }
+  }
