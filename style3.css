@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Hahmlet', serif;
+    font-family: 'Raleway', sans-serif;
+
+}
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(background2.jpeg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+nav{
+    display: flex;
+    padding: 02% 6%;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+
+}
+.nav-links ul li::after{
+    content:'';
+    width: 0;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 8.55;
+}
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+.text-box{
+    width: 98%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center
+}
+h3{
+    font-size: 20px;
+    color: white
+
+}
+p{
+    font-size: 14px;
+    color: white
+
+}
+text-box h1{
+    font-size: 90px;
+}
+@media(max-width: 700px){
+    .text-box h1{
+        font-size: 20px;
+
+    }
+    .nav-links ul li{
+        display: block;
+
+}
+}
+/------*Project-----*/
+
+.course{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+h1{
+    font-size: 36px;
+    font-weight: 600;
+
+}
+h5{
+    font-size: 24px;
+    font-weight: 600;
+}
+p{
+    color: black;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+.chart {
+    border: #1ba098 solid 6px;
+    border-radius: 10px;
+    margin: 15px;
+    background-color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 8px;
+    display: flex;px 3px rgba(0,0,0,.5);
+}
