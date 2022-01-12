@@ -5,7 +5,7 @@
       "text": "Chart 1: Daily Returns on 5 major Cryptocurrency Coins ",
       "subtitle": "Returns on 5 Major Cryptocurrencies. Source: Yahoo Finance ",
       "subtitleFontStyle": "italic",
-      "subtitleFontSize": 10,
+      "subtitleFontSize": 12,
       "anchor": "start",
       "color": "black"
     },
@@ -47,8 +47,8 @@
         }
       }
     ],
-    "height": 600,
-    "width": 700,
+    "height": 400,
+    "width": 800,
     "mark": {"type": "circle"},
     "encoding": {
       "x": {
@@ -69,7 +69,7 @@
         "type": "nominal",
         "scale": {"scheme": "inferno"},
         "title": "Cryptocurrency",
-        "legend": {"orient": "top-left", "fillColor": "whitesmoke"}
+        "legend": {"orient": "top-left", "fillColor": "white"}
       },
       "tooltip": [
         {"field": "Cryptocurrency", "title": "Cryptocurrency", "type": "ordinal"},
