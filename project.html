@@ -42,4 +42,44 @@
     <h1> Section 1 </h1>
     <h5>The aim of this project is to see whether herding behaviour exists within financial markets</h5>
 
+   <p>*insert text here*.</p>
+
+<!--Vaga embed, with notes for what is going on-->
+<div class="chart" id="myChart1">
+
+  <script>
+    // Following the script tag we are using Javascript.
+    // One way to tell is to see how comments work...
+    // First job is to set the chart as a JS variable:
+    var myChart1 = "Project_Chart1.json";
+      // updated file changes `
+    // Now we simply insert it, using Vega's embed code:
+    // The embed function needs to be told the location, and what to put there. 
+    vegaEmbed('#Chart1', myChart1);
+  </script>
+    <script>
+
+    <h5> text going here </h5>
+        
+    var myChart2 = "Screenshot 2022-01-12 at 16.08.33.png";
+        vegaEmbed('#Chart2', myChart2);
+    <p>///</p>
+    </script>
     
+    <script> 
+        <h5> text going here</h5>
+        var myChart3 = "Chart3_Project.json";
+        vegaEmbed('#Chart3', myChart3);
+        <p>///</p>
+    </script>
+    
+   <script>
+       <h5> text going here </h5>
+       var myChart4 = "Chart4_project.json";
+       vegaEmbed('#Chart4', myChart4);
+       <p>////</p>
+                 
+    
+    
+</div> 
+
