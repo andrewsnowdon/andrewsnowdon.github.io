@@ -16,13 +16,13 @@
   "transform": [{"calculate": "1", "as": "stops"}],
   "width": 300,
   "height": 300,
-  "mark": {"type": "arc", "innerRadius": 80},
+  "mark": {"type": "arc", "innerRadius": 80, "tooltip": {"field": "age_range"}},
   "encoding": {
     "theta": {"aggregate": "count", "field": "age_range", "type": "nominal"},
     "color": {
       "field": "age_range",
       "type": "ordinal",
-      "scale": {"scheme": "viridis"},
+      "scale": {"scheme": "inferno"},
       "legend": {"title": null}
     }
   }
