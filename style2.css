@@ -113,3 +113,7 @@ p{
     padding: 8px;
     display: flex;px 3px rgba(0,0,0,.5);
 }
+  @media(max-width:700px){
+        .chart{
+            flex-direction:column;
+        }
