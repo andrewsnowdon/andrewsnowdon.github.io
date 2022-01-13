@@ -1,90 +1,57 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {
-      "text": "Trading volume of the 5 major stock indexes from 2018-2022",
-      "subtitle": [
-        "Source: Yahoo Finance"
-        
-      ],
-      "subtitleFontStyle": "italic",
-      "subtitleFontSize": 10,
-      "anchor": "start",
-      "color": "black"
-    },
-    "background": "whitesmoke",
-    "width": 600,
-    "height": 400,
-    "data": {
-      "url": "https://raw.githubusercontent.com/andrewsnowdon/andrewsnowdon.github.io/main/Data_mega_final.csv",
-      "format": {"type": "csv", "parse": {"Date": "date:'%d/%m/%Y'"}}
-    },
-    "mark": {"type": "bar", "opacity": 1},
-  
-      "selection": {
-      "Stockname": {
-        "type": "single",
-        "fields": ["Stockname"],
-        "bind": {
-          "input": "select",
-          "options": [
-            null,
-            
-            "DOWJONES",
-            "FTSE100",
-            "NASDAQ",
-            "S&P500"
-            
-          ],
-          "name": "Pick an index: "
-        }
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Trading volume of the 5 major stock indexes from 2018-2022",
+    "subtitle": ["Source: Yahoo Finance"],
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "background": "whitesmoke",
+  "width": 600,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/andrewsnowdon/andrewsnowdon.github.io/main/Data_mega_final.csv",
+    "format": {"type": "csv", "parse": {"Date": "date:'%d/%m/%Y'"}}
+  },
+  "mark": {"type": "bar", "opacity": 1},
+  "selection": {
+    "Stockname": {
+      "type": "single",
+      "fields": ["Stockname"],
+      "bind": {
+        "input": "select",
+        "options": [null, "DOWJONES", "FTSE100", "NASDAQ", "S&P500"],
+        "name": "Pick an index: "
       }
-    },
-  
-    "transform": [
-      {"filter": {"selection": "Stockname"}},
-      {
-        "filter": {
-          "field": "Stockname",
-          "oneOf": [
-            
-            "DOWJONES",
-            "FTSE100",
-            "NASDAQ",
-            "S&P500"
-            
-          ]
-          
-        }
-      }
-    ],
-    
-   
-      
-    
-    "encoding": {
-      "x": {"field": "Date", "type": "temporal", "title": null},
-      "y": {
-        "field": "Volume",
-        "type": "quantitative",
-        "title": null,
-        "scale": {"domain": [0, 23000000000]}
-      },
-      "color": {
+    }
+  },
+  "transform": [
+    {"filter": {"selection": "Stockname"}},
+    {
+      "filter": {
         "field": "Stockname",
-        "type": "nominal",
-        "scale": {"scheme": "inferno"}
-      },
-      
-      
-    
-      "tooltip": [
-        {"field": "Date", "title": "Year", "type": "temporal"},
-        {
-          "field": "Volume",
-          "title": "Volume",
-          "type": "quantitative"
-        },
-  
-        {"field": "Stockname", "title": "Stockname", "type": "nominal"}
-      ]
-    }}
+        "oneOf": ["DOWJONES", "FTSE100", "NASDAQ", "S&P500"]
+      }
+    }
+  ],
+  "encoding": {
+    "x": {"field": "Date", "type": "temporal", "title": null},
+    "y": {
+      "field": "Volume",
+      "type": "quantitative",
+      "title": null
+    },
+    "color": {
+      "field": "Stockname",
+      "type": "nominal",
+      "scale": {"scheme": "inferno"}
+    },
+    "tooltip": [
+      {"field": "Date", "title": "Year", "type": "temporal"},
+      {"field": "Volume", "title": "Volume", "type": "quantitative"},
+      {"field": "Stockname", "title": "Stockname", "type": "nominal"}
+    ]
+  }
+}
