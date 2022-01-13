@@ -10,8 +10,8 @@
   },
   "data": {
     "url": "https://raw.githubusercontent.com/andrewsnowdon/andrewsnowdon.github.io/main/Data4g1.csv",
-      "format": {"type": "csv", "parse": {"Date": "date:'%d/%m/%Y'"}}
-    },
+    "format": {"type": "csv", "parse": {"Date": "date:'%d/%m/%Y'"}}
+  },
   "height": 300,
   "width": 390,
   "background": null,
@@ -22,14 +22,7 @@
       "fields": ["Stockname"],
       "bind": {
         "input": "select",
-        "options": [
-          null,
-          "DAX",
-          "DOWJONES",
-          "FTSE100",
-          "NASDAQ",
-          "S&P500"
-        ],
+        "options": [null, "DAX", "DOWJONES", "FTSE100", "NASDAQ", "S&P500"],
         "name": "Select stock index"
       }
     }
@@ -47,6 +40,7 @@
       "type": "quantitative",
       "title": "",
       "axis": {"grid": true},
+      "scale": {"domain": [0, 40000]},
       "sort": []
     },
     "color": {
@@ -63,11 +57,7 @@
         "timeUnit": "month",
         "title": "Month"
       },
-      {
-        "field": "Open",
-        "type": "quantitative",
-        "title": "Price"
-      },
+      {"field": "Open", "type": "quantitative", "title": "Price"},
       {"field": "Stockname", "type": "nominal", "title": "Stockname"}
     ]
   },
