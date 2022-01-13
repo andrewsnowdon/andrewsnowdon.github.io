@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "config": {"background": "whitesmoke"},
     "title": {
-      "text": "Chart 1: Daily Cryptocurrency Returns",
+      "text": "Daily returns on 5 major stock indexes",
       "subtitle": "Daily returns for 5 major stock indexes ",
       "subtitleFontStyle": "italic",
       "subtitleFontSize": 10,
