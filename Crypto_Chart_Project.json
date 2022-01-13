@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "config": {"background": "whitesmoke"},
+    "config": {"background": "white"},
     "title": {
       "text": "Chart 1: Daily Returns on 5 major Cryptocurrency Coins ",
       "subtitle": "Returns on 5 Major Cryptocurrencies. Source: Yahoo Finance ",
@@ -49,7 +49,7 @@
     ],
     "height": 400,
     "width": 800,
-    "mark": {"type": "circle"},
+    "mark": {"type": "tick"},
     "encoding": {
       "x": {
         "field": "Date",
@@ -67,7 +67,7 @@
       "color": {
         "field": "Cryptocurrency",
         "type": "nominal",
-        "scale": {"scheme": "inferno"},
+        "scale": {"scheme": "turbo"},
         "title": "Cryptocurrency",
         "legend": {"orient": "top-left", "fillColor": "white"}
       },
