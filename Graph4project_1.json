@@ -1,0 +1,75 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Stock Prices of 5 Major indexes",
+    "subtitle": "Yahoo Finance",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/andrewsnowdon/andrewsnowdon.github.io/main/Data4g1.csv",
+      "format": {"type": "csv", "parse": {"Date": "date:'%d/%m/%Y'"}}
+    },
+  "height": 300,
+  "width": 390,
+  "background": null,
+  "mark": "line",
+  "selection": {
+    "Stockname": {
+      "type": "single",
+      "fields": ["Stockname"],
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "DAX",
+          "DOWJONES",
+          "FTSE100",
+          "NASDAQ",
+          "S&P500"
+        ],
+        "name": "Select stock index"
+      }
+    }
+  },
+  "transform": [{"filter": {"selection": "Stockname"}}],
+  "encoding": {
+    "x": {
+      "field": "Date",
+      "type": "temporal",
+      "title": "",
+      "axis": {"grid": false}
+    },
+    "y": {
+      "field": "Open",
+      "type": "quantitative",
+      "title": "",
+      "axis": {"grid": true},
+      "sort": []
+    },
+    "color": {
+      "field": "Stockname",
+      "type": "nominal",
+      "legend": {"orient": "top-left", "columns": 3},
+      "sort": [],
+      "scale": {"scheme": "inferno"}
+    },
+    "tooltip": [
+      {
+        "field": "Date",
+        "type": "temporal",
+        "timeUnit": "month",
+        "title": "Year"
+      },
+      {
+        "field": "Open",
+        "type": "quantitative",
+        "title": "Price"
+      },
+      {"field": "Stockname", "type": "nominal", "title": "Stockname"}
+    ]
+  },
+  "config": {}
+}
