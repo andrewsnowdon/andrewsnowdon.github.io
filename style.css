@@ -70,4 +70,8 @@ text-box h1{
         display: block;
 
 }
+    @media(max-width:700px){
+        .chart{
+            flex-direction:column;
+        }
 }
