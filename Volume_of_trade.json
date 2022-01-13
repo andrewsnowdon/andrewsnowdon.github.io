@@ -9,8 +9,8 @@
     "color": "black"
   },
   "background": "whitesmoke",
-  "width": 600,
-  "height": 400,
+  "width": 300,
+  "height": 310,
   "data": {
     "url": "https://raw.githubusercontent.com/andrewsnowdon/andrewsnowdon.github.io/main/Data_mega_final.csv",
     "format": {"type": "csv", "parse": {"Date": "date:'%d/%m/%Y'"}}
