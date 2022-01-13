@@ -61,7 +61,7 @@
         "field": "Date",
         "type": "temporal",
         "timeUnit": "month",
-        "title": "Year"
+        "title": "Month"
       },
       {
         "field": "Open",
