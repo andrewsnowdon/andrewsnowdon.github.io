@@ -9,7 +9,7 @@
     "color": "black"
   },
   "background": "whitesmoke",
-  "width": "container",
+  "width": 300,
   "height": 310,
   "data": {
     "url": "https://raw.githubusercontent.com/andrewsnowdon/andrewsnowdon.github.io/main/Data_mega_final.csv",
