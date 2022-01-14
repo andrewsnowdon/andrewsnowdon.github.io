@@ -109,11 +109,11 @@ p{
   width: flex;
   height: flex;
   gap: 30px 30px;
-  border: #e6edf0 solid 4px;
+  border: lightgreen solid 5px ;
   border-radius: 10px;
   margin: 1px;
-  padding: 8px;
-  background-color: #FFFFFF;
+  padding: 4px;
+  background-color: white;
 }
 
 .bigchart {
