@@ -46,15 +46,15 @@
     <h1> Is there evidence of herding in financial markets?</h1>
     <h5> </h5>
 
-    <p>When studying Financial Markets there has oftentimes been debate over whether they operate efficiently and whether they do so in a manner that is congruent with the Efficient Market Hypothesis. Scholars such as Bikchandi (2000) and Spyrou (2013) have speculated that an explanation as to why Financial Markets sometimes do not operate according to this principle can oftentimes be rooted in herding behaviour. Herding occurs in finance when investors follow the crowd instead of their own analysis. Historically, it is attributable to starting large market rallies and sell offs that are often based on a lack of fundamental support to justify either. Therefore, through a series of visualisations I will show instances of herding, the effect of herding and whether herding can actually be empirically proven in less traditional markets such as the cryptocurrency market. </p>
+    <p>When studying Financial Markets there has oftentimes been debate over whether they operate efficiently. Scholars such as Bikchandi (2000) and Spyrou (2013) speculate that an explanation for this ineffiency; they argue that it is rooted in herding behaviour. Herding occurs in finance when investors follow the crowd instead of their own analysis. Historically, it is attributable to starting large market rallies and sell offs that are based on a lack of fundamental support to justify either. Therefore, through a series of visualisations I aim to show instances of herding, the effect of herding and whether herding can actually be empirically proven in less traditional markets i.e the cryptocurrency market. </p>
 
 
 
 </div>
         
-        <h5> Section 1: Herding in times of uncertainty</h5>
+        <h5> Section 1: Herding in Times of Uncertainty</h5>
 
-  <p>In the field of behavioural economics scholars stress that herding behaviour has the ability to fuel market crashes in finance. Thus, for my first piece of analysis I have chosen to scrutinise the financial crash linked to the outbreak of Covid-19. Figure 1 displays the stock price of 5 major stock indexes ranging from pre to post Covid-19 outbreak. From this one is able to see that each indexes price plummets when Covid was officially declared a global pandemic in March of 2020. </p>
+  <p>In the field of behavioural economics scholars stress that herding behaviour has the ability to fuel market crashes. Thus, for my first piece of analysis I have chosen to scrutinise the financial crash linked to the outbreak of Covid-19. Figure 1 displays the stock price of 5 major stock indexes ranging from pre to post Covid-19 outbreak. From this one is able to see that each indexes price plummets when Covid was officially declared a global pandemic in March of 2020. </p>
 <p>The link to the code used to create figure 2 can be found <a href="https://colab.research.google.com/drive/1DYdtBbER_e4TYss9d7niacNp3dj6fcb_">here</a></p>
 <p>The link to the code used to extract data from yfinance can be found <a href= "https://colab.research.google.com/drive/1QPiQT_KxUirwqk_-WoUgOdT1vdafVrqt">here</a></p>
         <div class = "chart" id="Chart1">
@@ -64,7 +64,7 @@
          </script>
         </div>
        
-        <p>Although, this is not enough to discern whether herding behaviour was a driving mechanism, let alone a key driving mechanism in precipitating such a market failure. Therefore, in figure 2 I have created a graph that explores the relationship between trading volume and stock prices. This draws upon theory purported by Jlassi and Bensaida (2014). They note that trading volume is a key explanatory variable when identifying instances of herding. From this figure we can see that as the stock price begins to rapidly decline trading volume increases. Therefore, it can be argued that market uncertainty might cause investors to panic sell shares. This might precipitate an informational cascade as prices begin to decrease causing other investors to offload stocks thus fuelling a market crash. <p>
+        <p>Although, this is not enough to discern whether herding behaviour is a driving mechanism, let alone a key driving mechanism in precipitating market failure. Subsequently, in figure 2 I have created a graph that explores the relationship between trading volume and stock prices. This draws upon theory purported by Jlassi and Bensaida (2014). They note that trading volume is a key explanatory variable when identifying instances of herding. From this figure we can see that as the stock price begins to rapidly decline trading volume increases. Therefore, it can be argued that market uncertainty might cause investors to panic sell shares. This might initiate an informational cascade as prices begin to decrease causing other investors to offload stocks as they disregard company's fundamentals and follow the market signal instead. <p>
         <p>Figure 2: A graph demonstrating how volume of trade and price change interact in times of uncertainty.</p>
      
      
@@ -74,7 +74,7 @@
                    </div>   
         
         <h5> Section 2: Herding and its effect on market volatility </h5>
-        <p> The previous figures demonstrate that herding can be seen to increase irrational trade that constitutes large price fluctuations. Attentive of this, my attention turned to markets where price fluctuations are more prominent, and volatility is more pronounced. Therefore, I decided to explore whether herding behaviour is evident in the cryptocurrency market. This being a market that is characterised by significant bullish, bearish runs and compositional uncertainty (Vladimir, 2021). From these graphs we are able to see that cryptocurrency price is markedly more volatile than that of traditional stocks <p>
+        <p> The previous figure demonstrates that there is a correlative relationship between trading volume and price fluctuations. With this in mind, it might be beneficial to analyse markets where price fluctuations are more prominent, and volatility is more pronounced. Thus, I decided to explore whether herding behaviour is evident in the cryptocurrency market.<p>
 
 <div class="chart" id="Chart2">
   <script>
@@ -94,7 +94,7 @@
      </div> 
      
         <h5> Section : Empirically exploring the presence of herding in Cryptocurrency Markets</h5>
-        <p> Here I employ Chang et al's (1995) CSAD model, regressing three times, using the outbreak of covid and 95th percentile outliers as dummy variables</p>
+        <p> Here I employ Chang et al's (1995) CSAD model, regressing three times, using the outbreak of covid and 95th percentile outliers as dummy variables. </p>
         <p> stata do file <a href = "https://raw.githubusercontent.com/andrewsnowdon/andrewsnowdon.github.io/main/statadofile.do">here</a>
         
          
@@ -103,15 +103,17 @@
       <img src = "finalregressiontable.png"/>
      
       
-      <p> The regression results show that a marginal increase in absolute market returns leads to a 6 percentage point increase in the CSAD. The table also shows that the R value is 0.788 and the t-statistic is less than 0.05 which means that the regression model used is generally a good fit and can be relied upon. From this model one can therefore say that investors in cryptocurrency markets do seem to display herd behaviour. </p>  
+      <p> If herding was to be present the coefficient of the absolute market returns squared would need to be negative and statistically significant. This is not the case. The table shows that the R value is 0.788 and the t-statistic is less than 0.05 which means that the regression model used is generally a good fit and can be relied upon. Therefore, one can say that based off of this sample investors in cryptocurrency markets don't seem to display herd behaviour. </p>  
          
       <h5> Challenges in data cleaning/analysis and how i overcame them</h5> 
       
-      <p> The primary source of my data was the y.finance library. I accessed this via python in the google colab environment; the code for this can be found <a href= "https://colab.research.google.com/drive/1QPiQT_KxUirwqk_-WoUgOdT1vdafVrqt">here</a>. I chose this as the data from this source was daily and allowed me to access a range of data in a fairly automated manner. However the code i wrote only allowed me to access one stock/currency at a time causing me to have to perform a manual merge via excel. This wasn't desirable but the process wasn't overly tiresome. The biggest challnge i faced however was merging, formatting and creating the data that was relevant to my CSAD regressions. This was also done via excel and thus meant that I had to format the data in a way that was congruent with the STATA operating system. </p>
+      <p> The primary source of my data was the y.finance library. I accessed this via python in the google colab environment; the code for this can be found <a href= "https://colab.research.google.com/drive/1QPiQT_KxUirwqk_-WoUgOdT1vdafVrqt">here</a>. I chose this as the data from this source was daily and allowed me to access a range of data in a fairly automated manner. However, the code i wrote only allowed me to access one stock/currency at a time causing me to have to perform a manual merge via excel. This wasn't desirable but the process wasn't overly tiresome. The biggest challnge i faced however was merging, formatting and creating the data that was relevant to my CSAD regressions. This was also done via excel and thus meant that I had to format the data in a way that was congruent with the STATA operating system. </p>
        <p> Link to the excel spreadhseet for CSAD calculations <a href= "https://uob-my.sharepoint.com/:x:/r/personal/fh18749_bristol_ac_uk/_layouts/15/Doc.aspx?sourcedoc=%7B95D8A9F2-50B0-433F-8485-1C53061780D5%7D&file=Regression_CSAD_filexls.xlsx&action=default&mobileredirect=true&DefaultItemOpen=1&ct=1642132663611&wdOrigin=OFFICECOM-WEB.MAIN.OTHER&cid=cb9ef32e-5348-4bbf-9940-28a21ce36c03">here</a> </p>
       <h3>kkkkk</h3>
-      <h5> Conclusions</h5>
-      <p> Based off of the visualisations I have provided I can conclude that herding behaviour might in fact be present in both the respective markets analysed. It seems to be linked to investor sentiment regarding times of uncertainty and can be seen to drive large price fluctuations leading to volatility and potential market failure. However based off of the empirical analysis undertaken it seems that herding is present in the cryptocurrency market. If I were to do this again I would use a larger sample size to give more validity to my findings</p>
+     
+      
+      <h1> Conclusions</h1>
+      <p> Despite the fact that the visualisations and theory underpinning them seemed to suggest that herding might have been present in financial markets empirically that doesn't seem to be the case. Therefore in the future I may have to do this again with a much larger sample size controlling for other variables.  </p>
       
       <h5> References </h5> 
       <p>Chang, E. C., Cheng, J. W., & Khorana, A. (2000). An examination of herd behavior in equity markets: An international perspective. Journal of Banking and Finance, 24(10), 1651-1679.http://dx.doi.org/10.1016/S0378-4266(99)00096-5</p>
