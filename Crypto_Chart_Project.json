@@ -60,7 +60,7 @@
       "y": {
         "field": "Returns",
         "type": "quantitative",
-        "title": "Daily Return (%)",
+        "title": "Daily Returns (%)",
         "scale": {"domain": [-70, 70]},
         "axis": {"grid": false}
       },
