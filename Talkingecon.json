@@ -1,0 +1,45 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "title": {
+    "text": "Crypotcurrency opening prices",
+    "subtitle":"Crypotcurrency prices source: yahoo finance",
+    "subtitleFontStyle":"italic",
+    "subtitleFontSize":10,
+    "anchor": "start",
+    "color": "black"},
+
+  
+  "data": {
+    "url": "https://raw.githubusercontent.com/andrewsnowdon/andrewsnowdon.github.io/main/Crypto_data_project(ammended).csv",
+    "format": {"type": "csv", "parse": {"Date": "date:'%d/%m/%Y'"}}
+  },
+ 
+  "height": 300,
+  "width": 300,
+ 
+  "mark": {"type": "line", "point": false},
+  
+  "encoding": {
+    
+    "x": {
+      "field": "Date",
+      "type": "temporal",
+      "title": null,
+      "axis": {"grid": false}},
+ 
+    "y": {
+      "field": "Open",
+      "type": "quantitative",
+      "title": null,
+      "axis": {"grid": false}},
+
+    "color": {
+      "field": "Cryptocurrency",
+      "type": "nominal",
+      "scale": {"scheme": "set1"},
+      "title": null,
+      "legend": {"orient": "top-left"}
+ 
+   }
+  }}
