@@ -3,7 +3,7 @@
   "description": "Various S&P500 stocks with price change plotted against their relative price",
 
   "title": {
-    "text": "Gun deaths and income - US states",
+    "text": "Various S&P500 stocks with price change plotted against their relative price",
     "subtitle":["Source: Yahoo finance (scraped)"],
     "subtitleFontStyle":"italic",
     "subtitleFontSize":10,
