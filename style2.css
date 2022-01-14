@@ -124,16 +124,8 @@ p{
     padding: 8px;
     display: flex;px 3px rgba(0,0,0,.5);
 }
- .container {
-    display: flex;
-    flex-flow: wrap;
-    justify-content: center;
-    column-gap: 20px;
-    margin-top: 15px;
-    padding-top: 0px;
-    padding-bottom: 10px;
-    align-content: center;
-  }
+
+
 @media only screen and (min-width: 960px) {
         /* styles for browsers larger than 960px; */
     }
